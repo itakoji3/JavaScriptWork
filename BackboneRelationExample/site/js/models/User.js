@@ -1,0 +1,2 @@
+User = Backbone.RelationalModel.extend();
+
