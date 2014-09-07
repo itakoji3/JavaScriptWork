@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Backbone Example</title>
+		<!--<link rel="stylesheet" href="css/screen.css">-->
+	</head>
+	<body>
+		<hr/>
+		<h2>View3</h2>
+		<div id="view1">
+		</div>
+		<div id="view2">
+		</div>
+		<div id="view3">
+		</div>
+		<div id="view4">
+		</div>
+		<hr/>
+        <!-- QUnit Test -->
+        <hr/>
+        <div>
+        	<h1 id="qunit-header">QUnitテストスィート</h1>
+        	<h2　id="qunit-banner"></h2>
+        	<div id="qunit-testrunner-toolbar"></div>
+        	<h2 id="qunit-userAgent"></h2>
+            <ol id="qunit-tests">テストのマークアップ(非表示)</ol>
+        </div>
+
+        <!-- Template -->
+		<script id="carTemplate" type="text/template">
+		    <div class="car">
+			<ul>
+				<li><%= carId %></li>
+				<li><%= carKind %></li>
+				<li><%= maxCapacity %></li>
+				<li><%= rentalFee %></li>
+			</ul>
+			</div>
+			<button class="deleteCar">削除</button>
+			</div>
+		</script>
+		<script id="customerTemplate" type="text/template">
+		    <div class="customer">
+			<ul>
+				<li><%= customerId %></li>
+				<li><%= firstName %></li>
+				<li><%= secondName %></li>
+			</ul>
+			<button class="deleteCustomer">削除</button>
+			</div>
+		</script>
+
+		<script src="js/lib/jquery-2.1.1.min.js"></script>
+		<script src="js/lib/underscore-min.js"></script>
+		<script src="js/lib/backbone-min.js"></script>
+        <script src="js/lib/backbone.localStorage.js"></script>
+		<script src="js/models/modelExample.js"></script>
+		<script src="js/collection/collectionExample.js"></script>
+		<script src="js/views/viewExample.js"></script>
+		<!--script src="js/app.js"></script-->
+		<script src="js/lib/qunit-1.14.0.js"></script>
+		<script src="js/qunitsuite.js"></script>
+	</body>
+</html>
