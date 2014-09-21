@@ -11,11 +11,21 @@ app.View2 = Backbone.View.extend({
 
 // 3. HTML Page上
 app.View3 = Backbone.View.extend({
-    el: '#view3'
+    el: '#view3',
+
+    render: function() {
+    	this.$el.html('<h3>Child-of-view3</h3>').addClass('ppp');
+    	return this;
+    }
 });
 
 // 4. Sub Viewの場合はどうする
 app.SubView4 = Backbone.View.extend({
-    tagName: 'li'
+    tagName: 'li',
+
+    render: function() {
+    	this.$el.html('This is a li').wrap('ul');
+    	return this;
+    }
 });
 
