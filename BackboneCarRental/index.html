@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>KItani Rent a Car</title>
+  <link rel="stylesheet" type="text/css" href="assets/base.css">
+</head>
+
+<body>
+  <script type="text/template" id="car-template">
+    <div>
+      <div class="CarView">
+        <input class="toggle" type="checkbox" <%= isCheckedOut ? 'checked' : '' %> disabled>
+        <label><%= carType %></label>
+        <label><%= rentalFee %><label>
+        <label><%= capacity %></label>
+        <button class="edit">Edit</button>
+        <button class="destroy">Del</button>
+      </div>
+      <div>
+        <button class="rentalACar" <%= isCheckedOut ? 'disabled' : '' %>>貸出</button>
+        <button class="returnACar" <%= isCheckedOut ? '' : 'disabled' %>>返却</button>
+      </div>
+      <div class="RentalInfoView" hidden>
+        <label for="first">名</label>
+        <input class="first">
+        <label for="second">姓</label>
+        <input class="seond">
+        <label for="dayStart">開始日時</label>
+        <input class="dayStart">
+        <label for="dayEnd">終了日時</label>
+        <input class="dayEnd">
+        <button class="startRental">貸出承認</button>
+        <button class="cancelRental">キャンセル</button>
+      </div>
+      <div class="RentalView" <%= isCheckedOut ? '' : 'hidden' %>>
+        <label>名</label>
+        <label><%= first %><label>
+        <label>姓</label>
+        <label><%= second %><label>
+        <label>開始日</label>
+        <label><%= dayStart %></label>
+        <label>終了日</label>
+        <label><%= dayEnd %></label>
+      </div>
+    </div>
+　　</script>
+  <section id="car-rental-app">
+    <header id="header">
+      <H1>KItani Car Rental</H1>
+      <div id="carInfo">
+        <label for="carType">車種</label>
+        <input id="carType">
+        <label for="rentalFee">レンタル料(￥)</label>
+        <input id="rentalFee">
+        <label for="capacity">定員（人）</label>
+        <input id="capacity">
+        <button id="new-car">追加</button>
+      </div>
+    </header>
+    <section id="main">
+      <div>
+        <ul><li>
+          <input class="toggle" type="checkbox" disabled>
+          <label>(車種)</label>
+          <label>(レンタル料)</label>
+          <label>(定員)</label>
+        </li></ul>
+      </div>
+      <div>
+        <ul id="carList">
+        </ul>
+      </div>
+    </section>
+    <footer id="footer">
+    </footer>
+  </section>
+  <!-- script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script -->
+  <script type="text/javascript" src="lib/jquery.js"></script>
+  <script type="text/javascript" src="lib/underscore.js"></script>
+  <script type="text/javascript" src="lib/backbone.js"></script>
+  <script type="text/javascript" src="lib/backbone.localStorage.js"></script>
+
+  <!-- include source files here... -->
+  <script type="text/javascript" src="src/model/Car.js"></script>
+  <script type="text/javascript" src="src/model/CarCollection.js"></script>
+  <script type="text/javascript" src="src/model/Rental.js"></script>
+  <script type="text/javascript" src="src/view/CarView.js"></script>
+  <script type="text/javascript" src="src/view/CarCollectionView.js"></script>
+  <script type="text/javascript" src="src/view/AppView.js"></script>
+  <script type="text/javascript" src="src/app/app.js"></script>  
+</body>
+</html>
